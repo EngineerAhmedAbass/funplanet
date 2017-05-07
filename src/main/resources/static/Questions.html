@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="demo" ng-controller="AllPage">
+	<head>
+		<title>Index 2 </title>
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/Questions.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Baloo+Bhaina|Cairo|Changa|Cormorant+Garamond|Dosis|EB+Garamond|Exo|Exo+2|Indie+Flower|Josefin+Sans|Josefin+Slab|Lalezar|Lobster|Pacifico|Poiret+One|Questrial|Reem+Kufi|Russo+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=BenchNine|Cinzel|Comfortaa|Domine|El+Messiri|Lemonada|News+Cycle|Righteous|Satisfy" rel="stylesheet">
+		<script src="js/main.js"></script>
+    	<script src="questioncontroller.js"></script>
+	</head>
+
+	<body class="mixed">
+		<div class="questionCont">
+			<p ng-bind="counter"></p>
+			<div class="tf" id="tf">
+			<div class="common" ng-repeat="question in questions">
+				<b>{{question.question}}</b><br/>
+				<input type="radio" name={{question.id}} value="True"     ><label>True</label><br/>
+				<input type="radio" name={{question.id}} value="False"   ><label>False</label><br/>
+			</div >
+			<b><input type="button" value="Submit" ng-click="submittf()"> </b>
+			</div>
+
+			<div class="msq" id="msq">
+				<div class="common" ng-repeat="msqquestion in msqquestions">
+				<b>{{msqquestion.question}}</b><br/>
+				A)<input type="radio" name={{msqquestion.id}} value="A"   ><label> {{msqquestion.a}}</label><br/>
+				B)<input type="radio" name={{msqquestion.id}} value="B"   ><label> {{msqquestion.b}}</label><br/>
+				C)<input type="radio" name={{msqquestion.id}} value="C"   ><label> {{msqquestion.c}}</label><br/>
+				D)<input type="radio" name={{msqquestion.id}} value="D"   ><label> {{msqquestion.d}}</label><br/>
+				</div >
+				<b><input type="button" value="Submit" ng-click="submitmsq()"> </b>
+			</div>
+			<div class="comment">
+				<textarea cols="50" rows="5" placeholder="Leave your comment" ng-model="commentvalue" ></textarea><br>
+				<b><input type="button" value="SubmitComment" ng-click="submitcomment()"> </b>
+				<b><input type="button" value="SubmitScoreOnly" ng-click="submit()"> </b>
+			</div>
+		</div>
+		<script src="js/main.js"></script>
+   		<script src="js/jquery-3.1.1.min.js"></script>
+    	<script src="js/myjs.js"></script>
+	</body>
+</html>

@@ -1,0 +1,259 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+body
+{
+	background-color:#0064FF;
+	text-align: center;
+}
+.mixed
+{
+	background-color: #C8C8C8;
+}
+
+.copyRight
+{
+	position: fixed;
+	width: 100%;
+	padding-top:7px;
+	height:48px;
+	color:#999;
+	background-color:#333;
+	text-align:center;
+	bottom: 0px;
+}
+.copyRight h4
+{
+	margin:0px;
+}
+.copyRight a
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:hover
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:visited
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:focus
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.arrow_container
+{
+	margin: auto;
+	width: 40px;
+}
+.pointer
+{
+	margin: auto;
+	margin-top: 15px;
+	padding: 12px 16px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: #0064FF solid 1px;
+	color: #0064FF;
+	
+}
+.pointer a
+{
+	color: #0064FF;
+}
+.pointer:hover
+{
+	background-color: #0064FF;
+	color: white;
+}
+.pointer:hover a{
+	color: #FFF;
+}
+.pointer a:visited
+{
+	color: #0064FF;
+}
+/*Slider*/
+
+.slider{
+	margin-bottom: 15px;
+}
+
+/*mainIndex*/
+h2
+{
+	max-width: 500px;
+	margin: 0px auto 25px;
+	border-bottom: solid black 1.5px;
+	padding-bottom: 15px;
+}
+.taskBarLimiter
+{
+	
+	overflow: hidden;
+	max-width: 1366px;
+	margin: auto;
+	height: 100%;
+}
+.containerLimiter
+{
+	max-width: 1366px;
+	margin: auto;
+	height: inherit;
+}
+.taskBar
+{
+	width: auto;
+	overflow: auto;
+	background-color: white;
+}
+.info{
+	position: relative;
+	float: right;
+}
+.Container
+{
+	min-height: 680px;
+	margin: auto;
+}
+img
+{
+	display: inline-block;
+	border-radius: 50%;
+}
+p
+{
+	display: inline-block;
+	margin:  0px 10px;
+}
+
+.msq{
+	display: none;
+	margin: 15px auto;
+	padding: 15px;
+}
+.tf{
+	display: none;
+	margin: 15px auto;
+	padding: 15px;
+}
+.common
+{
+	margin: 15px auto;
+	padding: 15px;
+	text-align: center;
+}
+.Questions
+{
+	margin: auto;
+	background-color: white;
+	min-height: 500px;
+	max-width: 1366px;
+	padding-top: 40px;
+}
+input
+{
+	border: solid black 1.5px;
+	border-radius: 15px;
+	margin: 5px auto;
+	min-width: 300px;
+}
+textarea
+{
+	border: solid black 1.5px;
+	border-radius: 15px;
+	margin: 5px auto;
+	min-width: 500px;
+	
+}
+input[type=button]
+{
+	margin: 8px auto;
+	background-color: black;
+	color: white;
+	border: white;
+	padding: 5px;
+	font-size: bold;
+	min-width: 100px;
+}
+input[type=radio]
+{
+	margin: 5px auto;
+	min-width: 10px;
+}
+.questionCont
+{
+	padding-top: 35px;
+	background:white;
+	max-width: 1366px;
+	margin: auto;
+}
+/*b
+{
+	padding: 15px;
+	margin: 20px auto;
+	border: black 1.5px solid;
+	border-radius: 15px;
+}*/
+.comment {
+	display: none;
+	margin: 15px auto;
+	padding: 15px;
+}
