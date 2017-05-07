@@ -23,7 +23,7 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 	var usertype=localStorage.getItem("UserType");
 	var username=localStorage.getItem("UserName");
 	var gamenamee="";
-	var tempp="http://localhost:8080/Game2/Name/"+gameid;
+	var tempp="https://fun-planet.herokuapp.com/Game2/Name/"+gameid;
 	//alert("game ID is "+ tempp);
 	$http.get(tempp).
 		then(function(response1) {
@@ -33,7 +33,7 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 	});
 	if(gametype=="tf"){
 		ShowTFQuestions();
-		var temp = "http://localhost:8080/Questions/TF/"+gameid;
+		var temp = "https://fun-planet.herokuapp.com/Questions/TF/"+gameid;
 	    $http.get(temp).
 	        then(function(response2) {
 	            $scope.questions = response2.data;
@@ -42,7 +42,7 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 		
 	}else{
 		ShowMSQQuestions();
-		var temp = "http://localhost:8080/Questions/MSQ/"+gameid;
+		var temp = "https://fun-planet.herokuapp.com/Questions/MSQ/"+gameid;
 	    $http.get(temp).
 	        then(function(response3) {
 	            $scope.msqquestions = response3.data;
@@ -76,7 +76,7 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 				val : score,
 				gamename :gamenamee
 		};
-		var res = $http.post('http://localhost:8080/Score', dataObj);
+		var res = $http.post('https://fun-planet.herokuapp.com/Score', dataObj);
 		showComment();
     	
     };
@@ -108,7 +108,7 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 				val : score,
 				gamename : gamenamee
 		};
-		var res = $http.post('http://localhost:8080/Score', dataObj);
+		var res = $http.post('https://fun-planet.herokuapp.com/Score', dataObj);
 		showComment();
     };
 	$scope.submitcomment=function(){
@@ -121,18 +121,18 @@ app.controller('AllPage', function($scope, $http, $timeout) {
 				tId : usermail,
 				value : comment
 		};
-		var res2 = $http.post('http://localhost:8080/Comment', dataObj2);
+		var res2 = $http.post('https://fun-planet.herokuapp.com/Comment', dataObj2);
 		if(usertype=="Teacher"){
-			window.location.href="http://localhost:8080/TeacherPage";
+			window.location.href="https://fun-planet.herokuapp.com/TeacherPage";
 		}else{
-			window.location.href="http://localhost:8080/StudentPage";
+			window.location.href="https://fun-planet.herokuapp.com/StudentPage";
 		}
 	};
 	$scope.submit=function(){
 		if(usertype=="Teacher"){
-			window.location.href="http://localhost:8080/TeacherPage";
+			window.location.href="https://fun-planet.herokuapp.com/TeacherPage";
 		}else{
-			window.location.href="http://localhost:8080/StudentPage";
+			window.location.href="https://fun-planet.herokuapp.com/StudentPage";
 		}
 	};
 });
