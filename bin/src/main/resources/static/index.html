@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="demo" ng-controller="home">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	</head>
+
+	<body >
+		<div class="Forms">
+			<div class=" col-lg-6" >
+			<div id="signupdiv" class="signUp" >
+			<h3>Sign Up</h3>
+			<input id ="usermail" type="email" placeholder="Enter your Email" ng-model="newmail"><br/>
+			<input id ="userpassword" type="password" placeholder="Enter your Password" ng-model="newpass"><br/>
+			<input id ="username" type="text" placeholder="Enter your Name" ng-model="newname"><br/>
+			<input id ="userage" type="number" min="1" placeholder="Enter your Age" ng-model="newage"><br/>
+			<input id="userphone" type="text" placeholder="Enter your Phone" ng-model="newphone"><br/>
+			<input id ="usertype" type="radio" name="Type" value="Teacher" ng-model="newtype" /> <label>Teacher</label>
+			<input id ="usertype" type="radio" name="Type" value="Student" ng-model="newtype"/> <label>Student</label><br/>
+			<br/><input class="button"type="button" onclick="Confirm()" ng-click="sendcode()"  value="Sign Up">
+			</div>
+			<div id="confirmdiv" class="confirm" >
+				<h3>Enter your Confirmation Code</h3>
+				<input type="text" id="enteredcode" placeholder="Enter Confirmation Code" name="Code" ng-model="Vcode" /><br/>
+				<input type="button" id="confirmbutton" class="button"  ng-click="SendStudent()"  value="Confirm" />
+			</div>
+			<div class="backgroundsignUp">
+				<h3>Don't Have An Account</h3>
+				<button class="signUpButton" onClick="signUpButton()">SignUp</button>
+			</div>
+			</div>
+			<div class="col-lg-6" >
+			<div class="logIn">
+			<h3>Log In</h3>
+			<input id ="testid" type="text"  ng-model="id" placeholder="Enter your ID" required="required"><br/>
+			<input id ="testpass" type="password" placeholder="Enter your Password" ng-model="password"><br/>
+			<input name="Login" type="button" class="button" ng-click="GetUser()" value="LogIn" >
+			</div>
+			<div class="backgroundlogIn">
+				<h3>Have An Account</h3>
+				<button class="signUpButton" onClick="logInButton()">LogIn</button>
+			</div>
+			</div >
+		</div>
+		
+		
+		
+		<script src="js/main.js"></script>
+   		<script src="js/jquery-3.1.1.min.js"></script>
+    	<script src="controller.js"></script>
+    	<script src="js/bootstrap.js"></script>
+    	<script src="js/myjs.js"></script>
+	</body>
+</html>

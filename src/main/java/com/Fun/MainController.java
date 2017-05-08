@@ -92,21 +92,21 @@ public class MainController {
         return v;
     }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("Course/Teacher/{id:.+}")
 	 public @ResponseBody List<Course> GetTeacherCourses(@PathVariable String id)
 	 {
 		 return courseservice.GetCourse(id);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("Course")
 	 public @ResponseBody List<Course> GetAllCourses()
 	 {
 		 return courseservice.GetCourses();
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("Course/Teacher/Not/{email:.+}")
 	public @ResponseBody List<Course> GetCourses(@PathVariable String email)
 	{
@@ -122,7 +122,7 @@ public class MainController {
 		courseservice.AddCourse(course); 
 	}
 	
-//	@CrossOrigin(origins = "http://localhost:8080")
+//	//@CrossOrigin(origins = "http://localhost:8080")
 //	@RequestMapping(value="/Game/Name/{id}", method = RequestMethod.GET)
 //	@ResponseBody
 //	 public String GetGameNamee(@PathVariable int id)
@@ -131,7 +131,7 @@ public class MainController {
 //		 return gameservice.GetGameName(id);
 //	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game2/Name/{id}")
 	@ResponseBody
 	 public Game GetGameName(@PathVariable int id)
@@ -142,21 +142,21 @@ public class MainController {
 		 return T;
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(method=RequestMethod.GET,value="/Game")
 	 public @ResponseBody List<Game> GetGames()
 	 {
 		 return gameservice.GetAllGames();
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/Course/{id}")
 	 public @ResponseBody List<Game> GetmyGamesbyCourseid(@PathVariable int id)
 	 {
 		 return gameservice.GetGamesbyid(id);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/Not/Course/{id}")
 	 public @ResponseBody List<Game> GetGamesbyCourseid(@PathVariable int id)
 	 {
@@ -172,7 +172,7 @@ public class MainController {
 		 return ValidGames;
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/Teacher/Availabe/{email:.+}")
 	 public @ResponseBody List<Game> GetAvailabeGamesbyTeacherid(@PathVariable String email)
 	 {
@@ -188,7 +188,7 @@ public class MainController {
 		 return Available;
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/Teacher/Canceled/{email:.+}")
 	 public @ResponseBody List<Game> GetCanceledGamesbyTeacherid(@PathVariable String email)
 	 {
@@ -205,7 +205,7 @@ public class MainController {
 		 return AllGames;
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/{id}")
 	@ResponseBody
 	 public Game GetGame(@PathVariable int id)
@@ -213,7 +213,7 @@ public class MainController {
 		 return gameservice.GetGame(id);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.POST ,value="Game")
 	public void AddGame(@RequestBody Game game)
@@ -239,7 +239,7 @@ public class MainController {
 		//////*********************************************************************************
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Questions/MSQ/{gameid}")
 	 public @ResponseBody List<QuestionMsq> GetQuestionsmsq(@PathVariable int gameid)
 	 {
@@ -252,14 +252,14 @@ public class MainController {
 		questionServiceMsq.AddQuestionMsq(questionmsq); 
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Questions/TF/{gameid}")
 	 public @ResponseBody List<Questiontf> GetQuestionstf(@PathVariable int gameid)
 	 {
 		 return questionServicetf.GetAllQuestions(gameid);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(method=RequestMethod.POST ,value="QuestionTF")
 	public void AddQuestionTF(@RequestBody Questiontf questiontf)
 	{
@@ -277,21 +277,21 @@ public class MainController {
 		}
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Score")
 	 public @ResponseBody List<Score> GetScores()
 	 {
 		 return scoreservice.GetAllScores();
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Score/Game/{gameid}")
 	 public @ResponseBody List<Score> GetScoresByGame(@PathVariable int gameid)
 	 {
 		 return scoreservice.GetGameScores(gameid);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Score/Student/{studentid:.+}")
 	 public @ResponseBody List<Score> GetScoresByStudent(@PathVariable String studentid)
 	 {
@@ -303,14 +303,14 @@ public class MainController {
 	{
 		scoreservice.AddScore(score); 
 	}
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Student")
 	 public @ResponseBody List<Student> GetStudent()
 	 {
 		 return studentService.GetAllStudents();
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Student/{mail:.+}")
 	@ResponseBody
 	public Student GetStudent(@PathVariable String mail)
@@ -336,14 +336,14 @@ public class MainController {
 		studentService.DeleteStudent(mail);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Teacher")
 	 public @ResponseBody List<Teacher> GetTeacher()
 	 {
 		 return teacherService.GetAllTeachers();
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Teacher/One/{email:.+}")
 	 public @ResponseBody List<Teacher> GetAllTeachersexceptOne(@PathVariable String email)
 	 {
@@ -353,7 +353,7 @@ public class MainController {
 		return AllTeachers;
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Teacher/{email:.+}")
 	@ResponseBody
 	public Teacher GetTeacher(@PathVariable String email)
@@ -379,21 +379,21 @@ public class MainController {
 		teacherService.DeleteTeacher(mail);
 	}
 
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Games/Teacher/{email:.+}")
 	 public @ResponseBody List<Game> GetMineGames(@PathVariable String email)
 	 {
 		 return gameservice.GetGamesbyTeacherid(email);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Games/Not/Teacher/{email:.+}")
 	 public @ResponseBody List<Game> GetNotMineGames(@PathVariable String email)
 	 {
 		 return gameservice.GetNotMineGames(email);
 	 }
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/CopyGame/{gameid}/{courseid}/{teacheremail:.+}")
 	 public void CopyGame(@PathVariable String teacheremail,@PathVariable int gameid,@PathVariable int courseid)
 	 {
@@ -452,7 +452,7 @@ public class MainController {
 		commentService.AddComment(comment);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Comment/{email:.+}")
 	@ResponseBody
 	public List<Comment> GetAllComments(@PathVariable String email)
@@ -460,7 +460,7 @@ public class MainController {
 		return commentService.GetAllComments(email);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Notify/{email:.+}")
 	@ResponseBody
 	public List<Notification> GetNotification(@PathVariable String email)
@@ -474,7 +474,7 @@ public class MainController {
 		collaboratorService.AddCollaborator(collaborator); 
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Collaborator/{email:.+}")
 	@ResponseBody
 	public List<Collaborator> GetAllCollaboratorGames(@PathVariable String email)
@@ -482,7 +482,7 @@ public class MainController {
 		return collaboratorService.GetAllCollaboratorGames(email);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/Cancel/{id}")
 	@ResponseBody
 	public void CancelGame(@PathVariable int id)
@@ -492,7 +492,7 @@ public class MainController {
 		gameservice.AddGame(Temp);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	//@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/Game/UnCancel/{id}")
 	@ResponseBody
 	public void UnCancelGame(@PathVariable int id)

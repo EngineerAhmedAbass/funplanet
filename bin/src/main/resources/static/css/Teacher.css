@@ -1,0 +1,470 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+body
+{
+	background-color:#0064FF;
+	text-align: center;
+}
+.mixed
+{
+	background-color: #C8C8C8;
+}
+
+.copyRight
+{
+	position: fixed;
+	width: 100%;
+	padding-top:7px;
+	height:48px;
+	color:#999;
+	background-color:#333;
+	text-align:center;
+	bottom: 0px;
+}
+.copyRight h4
+{
+	margin:0px;
+}
+.copyRight a
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:hover
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:visited
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+.copyRight a:focus
+{
+	color:#006cff;
+	text-decoration:none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.arrow_container
+{
+	margin: auto;
+	width: 40px;
+}
+.pointer
+{
+	margin: auto;
+	margin-top: 15px;
+	padding: 12px 16px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: #0064FF solid 1px;
+	color: #0064FF;
+	
+}
+.pointer a
+{
+	color: #0064FF;
+}
+.pointer:hover
+{
+	background-color: #0064FF;
+	color: white;
+}
+.pointer:hover a{
+	color: #FFF;
+}
+.pointer a:visited
+{
+	color: #0064FF;
+}
+/*Slider*/
+
+.slider{
+	margin-bottom: 15px;
+}
+
+/*mainIndex*/
+h3
+{
+	margin: 0px 0px 10px 0px;
+}
+.taskBarLimiter
+{
+	
+	overflow: hidden;
+	max-width: 1366px;
+	margin: auto;
+	height: 100%;
+}
+.containerLimiter
+{
+	max-width: 1366px;
+	margin: auto;
+	height: inherit;
+}
+.taskBar
+{
+	width: auto;
+	overflow: auto;
+	background-color: #303030;
+	border-bottom: 1.5px white solid;
+}
+.info{
+	position: relative;
+	float: right;
+}
+.info P{
+	color: white;
+}
+.Container
+{
+	min-height: 680px;
+	margin: auto;
+}
+img
+{
+	display: inline-block;
+	border-radius: 50%;
+}
+p
+{
+	display: inline-block;
+	margin:  0px 10px;
+}
+
+.tableLimiter table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 90%;
+}
+.tableLimiter table tr td ,.tableLimiter th
+{
+	text-align: center;
+	padding: 10px;
+	border: white solid 1.5px;
+}
+
+.navList
+{
+	display: inline-block;
+	background-color: #303030;
+	width: 25%;
+	min-height: 680px;
+	color: white;
+}
+.navList h3
+{
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: white solid 1.5px;
+	max-width: 90%;
+	
+}
+.contant
+{
+	display: inline-block;
+	background-color: white;
+	width: 75%;
+	min-height: 680px;
+}
+.tableLimiter
+{
+	max-height: 600px;
+	overflow: auto;
+}
+.gameButton
+{
+	margin: 20px auto;
+	background-color: white;
+	color: black;
+	border: none;
+	padding: 10px;
+	border-radius: 15px;
+}
+.hiddenGames
+{
+	display: none;
+	padding-top: 25px;
+}
+.hiddenGames h3
+{
+	max-width: 15%;
+	margin: auto;
+	border-bottom: solid black 1.5px;
+}
+.hiddenGames table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 40%;
+}
+.hiddenGames table tr td,.hiddenGames th
+{
+	
+	text-align: center;
+	padding: 10px;
+	border: black solid 1.5px;
+}
+.startGameButton
+{
+	margin: 20px auto;
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 15px;
+}
+.hiddenGameContent
+{
+	display: none;
+	padding-top: 25px;
+}
+.hiddenAddCourse
+{
+	display: none;
+	padding-top: 25px;
+}
+.hiddenAddCourse h3,.hiddenAddGame h3
+{
+	padding: 15px;
+	max-width: 50%;
+	margin: auto;
+	border-bottom: solid black 1.5px;
+	margin-bottom: 25px;
+}
+.hiddenAddCourse input,.hiddenAddGame input
+{
+	margin: 10px auto;
+	padding: 10px;
+	border: black 1.5px solid;
+	border-radius: 15px;
+}
+.hiddenAddCourse textarea,.hiddenAddGame textarea
+{
+	margin: 10px auto;
+	padding: 10px;
+	border: black 1.5px solid;
+	border-radius: 15px;
+}
+.Courses
+{
+	display: none;
+}
+.hiddenAddGame
+{
+	display: none;
+	text-align: center;
+}
+.hiddenAddGame table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 80%;
+}
+.hiddenAddGame table tr td,.hiddenAddGame th
+{
+	text-align: center;
+	padding: 10px;
+	border: black solid 1.5px;
+}
+.info p:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+i
+{
+	color: white;
+	cursor: pointer ;
+}
+.copygame{
+	display: none;
+	padding-top: 25px;
+}
+.copygame h3
+{
+	padding: 15px;
+	max-width: 50%;
+	margin: auto;
+	border-bottom: solid black 1.5px;
+	margin-bottom: 25px;
+}
+.copygame table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 80%;
+}
+.copygame table tr td,.copygame th
+{
+	
+	text-align: center;
+	padding: 10px;
+	border: black solid 1.5px;
+}
+.notification
+{
+	/*z-index: 10;
+	background-color: #131313;
+	
+	position: fixed;
+	right: 0px;
+	padding-top: 25px;
+	width: 500px;*/
+	padding-top: 50px;
+	display: flex;
+	position: fixed;
+	top:50px;
+	right: -500px;
+	width: 500px;
+	color: white;
+	height: 100vh;
+	background: #303030;
+}
+.notification h3
+{
+	max-width: 250px;
+	margin: 5px auto 25px;
+	padding-bottom: 25px;
+	border-bottom: solid white 1.5px;
+	
+}
+.notification table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: auto;
+}
+.notification table tr td,.notification th
+{
+	text-align: center;
+	padding: 10px;
+	border: white solid 1.5px;
+}
+.notification b 
+{
+	color: #F40408;
+}
+.assesstant{
+	display: none;
+	padding-top: 25px;
+}
+.assesstant h3
+{
+	padding: 15px;
+	max-width: 50%;
+	margin: auto;
+	border-bottom: solid black 1.5px;
+	margin-bottom: 25px;
+}
+.assesstant table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 80%;
+}
+.assesstant table tr td,.assesstant th
+{
+	
+	text-align: center;
+	padding: 10px;
+	border: black solid 1.5px;
+}
+.assesstant button
+{
+	margin: 20px auto;
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 15px;
+}
+.cancelation{
+	display: none;
+	padding-top: 25px;
+}
+.cancelation h3
+{
+	padding: 15px;
+	max-width: 50%;
+	margin: auto;
+	border-bottom: solid black 1.5px;
+	margin-bottom: 25px;
+}
+.cancelation table
+{
+	text-align: center;
+	margin: 15px auto;
+	width: 80%;
+}
+.cancelation table tr td,.cancelation th
+{
+	text-align: center;
+	padding: 10px;
+	border: black solid 1.5px;
+}
+.cancelation button
+{
+	margin: 20px auto;
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 15px;
+}

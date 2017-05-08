@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="InsertQuestions"  ng-controller=AllPage>
+	<head>
+		<title>Add Questions</title>
+		
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/NewQ.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Baloo+Bhaina|Cairo|Changa|Cormorant+Garamond|Dosis|EB+Garamond|Exo|Exo+2|Indie+Flower|Josefin+Sans|Josefin+Slab|Lalezar|Lobster|Pacifico|Poiret+One|Questrial|Reem+Kufi|Russo+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=BenchNine|Cinzel|Comfortaa|Domine|El+Messiri|Lemonada|News+Cycle|Righteous|Satisfy" rel="stylesheet">
+
+	</head>
+
+	<body class="mixed">
+		<div class="Questions">
+		<h2>Enter your Game's Questions</h2>
+			<div class="MSQ">
+				<textarea cols="20" name="questionHead" rows="5" placeholder="Enter The Question" ng-model="msqquestion"></textarea><br/>
+				<input type="text" name="A" placeholder="First Answer(A)"  ng-model="answera" /><br/>
+				<input type="text" name="B" placeholder="Second Answer(B)" ng-model="answerb" /><br/>
+				<input type="text" name="C" placeholder="Third Answer(C)"  ng-model="answerc" /><br/>
+				<input type="text" name="D" placeholder="Fourth Answer(D)" ng-model="answerd" /><br/>
+				<input type="text" name="Correct" placeholder="Corret Answer(it's Header eg. A,B,C, or D)" ng-model="correctanswer" /><br/>
+				<input type="button" ng-click="AddMSQQuestion()"  value="Submit Question"/>
+				<input type="button" ng-click="Finish()"  value="Finish Question"/>
+			</div>
+			<div class="TF">
+				<textarea cols="20" name="questionHead" rows="5" placeholder="Enter The Question"  ng-model="tfquestion" ></textarea><br/>
+				<input type="radio" name="anwser" value="True"  /><label>True</label><br/>
+				<input type="radio" name="anwser" value="False" /><label>False</label><br/>
+				<input type="button" ng-click="AddTFQuestion()" value="Submit Question"/>
+				<input type="button" ng-click="Finish()"  value="Finish Question"/>
+			</div>
+		</div>
+		<script src="js/main.js"></script>
+		<script src="controller4.js"></script>
+   		<script src="js/jquery-3.1.1.min.js"></script>
+    	<script src="js/myjs.js"></script>
+	</body>
+</html>

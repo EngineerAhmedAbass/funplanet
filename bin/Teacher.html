@@ -1,0 +1,245 @@
+<!doctype html>
+<html ng-app="teach"  ng-controller=AllPage>
+	<head>
+		<title>Teacher</title>
+		
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/Teacher.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amiri|Baloo+Bhaina|Cairo|Changa|Cormorant+Garamond|Dosis|EB+Garamond|Exo|Exo+2|Indie+Flower|Josefin+Sans|Josefin+Slab|Lalezar|Lobster|Pacifico|Poiret+One|Questrial|Reem+Kufi|Russo+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=BenchNine|Cinzel|Comfortaa|Domine|El+Messiri|Lemonada|News+Cycle|Righteous|Satisfy" rel="stylesheet">
+	</head>
+
+	<body class="mixed">
+		<div class="taskBar">
+			<div class="taskBarLimiter">
+				<div class="info">
+				    <b><p class="allmycourses" onClick="showAllCourses()">Show All Courses</p></b>
+					<b><p class="mycourses" ng-click="showmycourses()">Show My Courses</p></b>
+					<b><p class="cancelGame" onClick="cancelOrReleaseGame()">My Games</p></b>
+					<b><p class="course" onClick="showAddCourse()">Create Course</p></b>
+					<b><p class="collaborator" onClick="showCollaborator()">Add Collaborator</p></b>
+					<b><p class="game" onClick="showAddGame()">Create Game</p></b>
+					<b><p class="copyGames" onClick="stealGame()">Steal Game</p></b>
+					<img src="" alt="" width="50" height="50"/>
+					<b><p ng-click="gohome()">{{TeacherName}}</p></b>
+					<b><i class="fa fa-bell" aria-hidden="true" onClick="Notification()"></i></b>
+					<b><p ng-click="logout()">Log Out</p></b>
+				</div>
+			</div>
+		</div>
+		<div class="Container">
+			<div class="containerLimiter">
+				<div class="navList col-lg-4 col-md-4 col-sm-4" >
+					<div class="tableLimiter allCourses">
+					<h3>List OF All Courses</h3>
+						<table>
+						<tr>
+							<th></th>
+							<th>Course Name</th>
+						</tr>
+						<tr ng-repeat="item in items">
+							<td><input type="radio" name="course" ng-value='{{item.id}}' value='{{item.id}}' ng-model="$parent.selectedcourse" /></td>
+							<td><p>{{item.name}}</p></td>
+						</tr >
+						</table>
+						<button class="gameButton" ng-click="showgames()">Show Games</button>
+					</div>
+					<div class="Courses">
+						<div class="tableLimiter">
+							<h3>Your Courses</h3>
+							<table>
+							<tr>
+								<th></th>
+								<th>Course Name</th>
+							</tr>
+							<tr ng-repeat="course in courses">
+								<td><input type="radio" name="course" ng-value='{{course.id}}' value='{{course.id}}' ng-model="$parent.mycourse" /></td>
+								<td><p>{{course.name}}</p></td>
+							</tr >
+							</table>
+							<button class="gameButton" ng-click="showmygames()">Show Games</button>
+						</div>
+					</div>
+				</div>
+				<div class="contant col-lg-6 col-md-6 col-sm-6">
+					<div class="hiddenGames" id="Games">
+						<h3>Games</h3>
+						<table>
+						<tr>
+							<th></th>
+							<th>Game's Name</th>
+							<th>Game's Desc</th>
+							<th>Game's Type</th>
+						</tr>
+						<tr  ng-repeat="game in games">
+							<td><input type="radio" id="GID" name="GameID" ng-value='{{game.id}}'  ng-model="$parent.game" /></td>
+							<td><p>{{game.name}}</p></td>
+							<td><p>{{game.des}}</p></td>
+							<td><p>{{game.type}}</p></td>
+						</tr>
+						</table>
+						<button class="startGameButton"  ng-click="getquestions()" >Play Game</button>
+					</div>
+					<div class="hiddenAddCourse">
+						<h3><b>Enter your Course Details</b></h3>
+						<input type="text" name="CourseName" placeholder="Enter Course Name" 		ng-model="coursename"/><br/>
+						<input type="number" name="CourseAge" placeholder="Min Age for the Course"  ng-model="courseage"/><br/>
+						<textarea cols="50" rows="5" placeholder="Enter Course Desc...."            ng-model="coursedes"></textarea><br>
+						<button class="startGameButton"  ng-click="createcourse()" >Create Course</button>
+					</div>
+					<div class="hiddenAddGame">
+						<h3><b>Enter your Game Details</b></h3>
+						<div class="col-lg-4">
+							<h4><b>Choose Game's Course</b></h4>
+							<table>
+							<tr>
+								<th></th>
+								<th>Course Name</th>
+							</tr>
+							<tr ng-repeat="item in courses">
+								<td><input type="radio" name="choosencourse" ng-value='{{item.id}}' value='{{item.id}}' ng-model="$parent.choosencourse" /></td>
+								<td><p>{{item.name}}</p></td>
+							</tr >
+							</table>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" name="gameName" placeholder="Enter Game Name" ng-model="newgamename"/><br/>
+							<input type="radio" name="chossengameType" placeholder="TF"  value="tf"    /><label>True/False</label>
+							<input type="radio" name="chossengameType" placeholder="MSQ" value="msq"   /><label>MSQ</label><br/>
+							<textarea cols="50" rows="5" placeholder="Enter Game Desc...." ng-model="newgamedes"></textarea><br>
+						</div>
+						<button class="startGameButton"  ng-click="CreateGame()" >Create Game</button>
+					</div>
+					<div class="copygame">
+						<h3><b>Pick a Game To Steal you Maggot</b></h3>
+						<div class="col-lg-4">
+							<h4><b>Choose Game's Course</b></h4>
+							<table>
+							<tr>
+								<th></th>
+								<th>Course Name</th>
+							</tr>
+							<tr ng-repeat="item in courses">
+								<td><input type="radio" name="stolencourse" ng-value='{{item.id}}' value='{{item.id}}' ng-model="$parent.stolencourse" /></td>
+								<td><p>{{item.name}}</p></td>
+							</tr >
+							</table>
+						</div>
+						<div class="col-lg-8">
+							<h3>Games</h3>
+						<table>
+						<tr>
+							<th></th>
+							<th>Game's Name</th>
+							<th>Game's Desc</th>
+							<th>Game's Type</th>
+						</tr>
+						<tr ng-repeat="notmygame in notmygames">
+							<td><input type="radio" id="GID" name="GameID" ng-value='{{notmygame.id}}'  ng-model="$parent.notmygameid" /></td>
+							<td><p>{{notmygame.name}}</p></td>
+							<td><p>{{notmygame.des}}</p></td>
+							<td><p>{{notmygame.type}}</p></td>
+						</tr>
+						</table>
+						<button class="startGameButton"  ng-click="stealgame()" >Steal Game</button>
+						</div>
+					</div>
+					<div class="assesstant">
+						<div class="col-lg-6">
+							<h3>My Games</h3>
+							<table>
+							<tr>
+								<th></th>
+								<th>Game's Name</th>
+								<th>Game's Desc</th>
+								<th>Game's Type</th>
+							</tr>
+							<tr  ng-repeat="mygame in mygames">
+								<td><input type="radio" id="MyGID" name="MyGameID" ng-value='{{mygame.id}}'  ng-model="$parent.mygame" /></td>
+								<td><p>{{mygame.name}}</p></td>
+								<td><p>{{mygame.des}}</p></td>
+								<td><p>{{mygame.type}}</p></td>
+							</tr>
+							</table>
+						</div>
+						<div class="col-lg-6">
+						<h3><b>Available Teachers</b></h3>
+							<table>
+							<tr>
+								<th></th>
+								<th>Teacher's Name</th>
+							</tr>
+							<tr  ng-repeat="collaborator in collaborators" >
+								<td><input type="radio" id="collaboratorid" name="collaboratormail" value="{{collaborator.email}}" ng-value='{{collaborator.email}}' ng-model="$parent.collaboratorid" /></td>
+								<td><p>{{collaborator.name}}</p></td>
+							</tr>
+							</table>
+						</div>
+						<button class="addCollaborator"  ng-click="addcollaborator()" >Add collaborator</button>
+					</div>
+					<div class="cancelation">
+						<div class="col-lg-6">
+							<h3>Available Games</h3>
+							<table>
+							<tr>
+								<th></th>
+								<th>Game's Name</th>
+								<th>Game's Desc</th>
+								<th>Game's Type</th>
+							</tr>
+							<tr  ng-repeat="availablegame in availablegames">
+								<td><input type="radio" id="availablegameID" name="availablegameID" ng-value='{{availablegame.id}}'  ng-model="$parent.availablegameid" /></td>
+								<td><p>{{availablegame.name}}</p></td>
+								<td><p>{{availablegame.des}}</p></td>
+								<td><p>{{availablegame.type}}</p></td>
+							</tr>
+							</table>
+							<button class="cancel" ng-click="cancelgame()">Cancel Game</button>
+						</div>
+						<div class="col-lg-6">
+							<h3>Canceled Games</h3>
+							<table>
+							<tr>
+								<th></th>
+								<th>Game's Name</th>
+								<th>Game's Desc</th>
+								<th>Game's Type</th>
+							</tr>
+							<tr  ng-repeat="canceledgame in canceledgames">
+								<td><input type="radio" id="canceledgameID" name="canceledgameID" value="{{canceledgame.id}}" ng-value='{{canceledgame.id}}'  ng-model="$parent.canceledgameid" /></td>
+								<td><p>{{canceledgame.name}}</p></td>
+								<td><p>{{canceledgame.des}}</p></td>
+								<td><p>{{canceledgame.type}}</p></td>
+							</tr>
+							</table>
+							<button class="release" ng-click="uncancelgame()">Release Game</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="notification"> 
+			<div class="col-lg-12">
+				<h3>Comments On Games</h3>
+				<table>
+					<tr>
+						<th>User</th>
+						<th>Game</th>
+						<th>Comment</th>
+					</tr>
+					<tr ng-repeat="notification in notifications">
+						<td><p>{{notification.sName}}</p></td>
+						<td><p>{{notification.gName}}</p></td>
+						<td><p>{{notification.value}}</p></td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<script src="js/main.js"></script>
+		<script src="Teachercontroller.js"></script>
+   		<script src="js/jquery-3.1.1.min.js"></script>
+   		<script src="js/bootstrap.js"></script>
+    	<script src="js/myjs.js"></script>
+	</body>
+</html>
