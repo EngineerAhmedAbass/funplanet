@@ -28,13 +28,13 @@ app.controller('AllPage', function($scope, $http) {
 	var studentmail=localStorage.getItem("UserMail");
 	var studentname=localStorage.getItem("UserName");
 	$scope.StudentName=studentname;
-	var temp = "http://localhost:8085/Course";
+	var temp = "https://fun-planet.herokuapp.com/Course";
     $http.get(temp).
         then(function(response) {
             $scope.items = response.data;
         });
     
-    temp2 = "http://localhost:8085/Notify/"+studentmail;
+    temp2 = "https://fun-planet.herokuapp.com/Notify/"+studentmail;
     $http.get(temp2).
         then(function(response3) {
             $scope.notifications = response3.data;
@@ -45,7 +45,7 @@ app.controller('AllPage', function($scope, $http) {
 	$scope.showgames=function(){
 		showGame();
 		var val=$scope.selectedcourse;
-		var temp = "http://localhost:8085/Game/Not/Course/"+val;
+		var temp = "https://fun-planet.herokuapp.com/Game/Not/Course/"+val;
 	    $http.get(temp).
 	        then(function(response2) {
 	            $scope.games = response2.data;
@@ -70,14 +70,14 @@ app.controller('AllPage', function($scope, $http) {
 			
 			localStorage.setItem("GameNum", $scope.game);
 			localStorage.setItem("GameType", type);
-			window.location.href="http://localhost:8080/FunPlanetGui/Questions.html";
+			window.location.href="https://fun-planet.herokuapp.com/QuestionsPage";
 			}
 
 	};
 	$scope.getscores=function()
 	{
 		//alert(studentmail);
-		var temp = "http://localhost:8085/Score/Student/"+studentmail;
+		var temp = "https://fun-planet.herokuapp.com/Score/Student/"+studentmail;
 		//alert(temp);
 	    $http.get(temp).
 	        then(function(response5){
@@ -89,11 +89,11 @@ app.controller('AllPage', function($scope, $http) {
 	$scope.logout=function()
 	{
 		//$localStorage.$reset();
-		window.location.href="http://localhost:8080/FunPlanetGui/";
+		window.location.href="https://fun-planet.herokuapp.com/HomePage";
 	}
 	$scope.gohome=function()
 	{
 		//$localStorage.$reset();
-		window.location.href="http://localhost:8080/FunPlanetGui/Student.html";
+		window.location.href="https://fun-planet.herokuapp.com/StudentPage";
 	}
 });

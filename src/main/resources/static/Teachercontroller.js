@@ -81,18 +81,18 @@ app.controller('AllPage', function($scope,$http) {
 	var teachermail=localStorage.getItem("UserMail");
 	var teachername=localStorage.getItem("UserName");
 	$scope.TeacherName=teachername;
-	var temp = "http://localhost:8085/Course/Teacher/Not/"+teachermail;
+	var temp = "https://fun-planet.herokuapp.com/Course/Teacher/Not/"+teachermail;
     $http.get(temp).
         then(function(response) {
             $scope.items = response.data;
         });
-    temp = "http://localhost:8085/Course/Teacher/"+teachermail;
+    temp = "https://fun-planet.herokuapp.com/Course/Teacher/"+teachermail;
     $http.get(temp).
         then(function(response2) {
             $scope.courses = response2.data;
         });
 	
-	temp = "http://localhost:8085/Games/Not/Teacher/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Games/Not/Teacher/"+teachermail;
     $http.get(temp).
         then(function(response3) {
             $scope.notmygames = response3.data;
@@ -101,31 +101,31 @@ app.controller('AllPage', function($scope,$http) {
     	showMyCourses();
     };
 	
-	temp = "http://localhost:8085/Comment/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Comment/"+teachermail;
     $http.get(temp).
         then(function(response4) {
             $scope.notifications = response4.data;
         });
 	
-	temp = "http://localhost:8085/Games/Teacher/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Games/Teacher/"+teachermail;
     $http.get(temp).
         then(function(response5) {
             $scope.mygames = response5.data;
         });
 	
-	temp = "http://localhost:8085/Teacher/One/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Teacher/One/"+teachermail;
     $http.get(temp).
         then(function(response6) {
             $scope.collaborators = response6.data;
         });
 	
-	temp = "http://localhost:8085/Game/Teacher/Canceled/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Game/Teacher/Canceled/"+teachermail;
     $http.get(temp).
         then(function(response7) {
             $scope.canceledgames = response7.data;
         });
 	
-	temp = "http://localhost:8085/Game/Teacher/Availabe/"+teachermail;
+	temp = "https://fun-planet.herokuapp.com/Game/Teacher/Availabe/"+teachermail;
     $http.get(temp).
         then(function(response8) {
             $scope.availablegames = response8.data;
@@ -138,7 +138,7 @@ app.controller('AllPage', function($scope,$http) {
     $scope.showgames=function(){
 		showGame();
 		var val=$scope.selectedcourse;
-		var temp = "http://localhost:8085/Game/Course/"+val;
+		var temp = "https://fun-planet.herokuapp.com/Game/Course/"+val;
 	    $http.get(temp).
 	        then(function(response2) {
 	            $scope.games = response2.data;
@@ -148,7 +148,7 @@ app.controller('AllPage', function($scope,$http) {
 	$scope.showmygames=function(){
 		showGame();
 		var val=$scope.mycourse;
-		var temp = "http://localhost:8085/Game/Course/"+val;
+		var temp = "https://fun-planet.herokuapp.com/Game/Course/"+val;
 	    $http.get(temp).
 	        then(function(response2) {
 	            $scope.games = response2.data;
@@ -159,7 +159,7 @@ app.controller('AllPage', function($scope,$http) {
 		var val1=$scope.stolencourse;
 		var val2=$scope.notmygameid;
 		//var studentmail=localStorage.getItem("StudentMail");
-		var temp = "http://localhost:8085/CopyGame/"+val2+"/"+val1+"/"+teachermail;
+		var temp = "https://fun-planet.herokuapp.com/CopyGame/"+val2+"/"+val1+"/"+teachermail;
 		alert(temp);
 	    $http.get(temp).
 	        then(function(response5) {
@@ -178,7 +178,7 @@ app.controller('AllPage', function($scope,$http) {
 		
 		localStorage.setItem("GameNum", $scope.game);
 		localStorage.setItem("GameType", type);
-		window.location.href="http://localhost:8080/FunPlanetGui/Questions.html";
+		window.location.href="https://fun-planet.herokuapp.com/QuestionsPage";
 	};
 	$scope.createcourse=function(){
 		
@@ -195,7 +195,7 @@ app.controller('AllPage', function($scope,$http) {
 				name : $scope.coursename,
 				des : $scope.coursedes
 			};
-			$http.post('http://localhost:8085/Course', dataObj);
+			$http.post('https://fun-planet.herokuapp.com/Course', dataObj);
 			alert("Successfully Added Course ");
 			window.location.reload();
 		}
@@ -220,14 +220,14 @@ $scope.CreateGame=function(){
 					name : $scope.newgamename,
 					des : $scope.newgamedes
 				};
-			$http.post('http://localhost:8085/Game', dataObj);
+			$http.post('https://fun-planet.herokuapp.com/Game', dataObj);
 			
 			localStorage.setItem("NewGameTeacherID", teachermail);
 			localStorage.setItem("NewGameCourseID", courseid);
 			localStorage.setItem("NewGameType", gametype);
 			localStorage.setItem("NewGameName", $scope.newgamename);
 			localStorage.setItem("NewGameDes", $scope.newgamedes);
-			window.location.href="http://localhost:8080/FunPlanetGui/NewQuestions.html";
+			window.location.href="https://fun-planet.herokuapp.com/NewQuestionsPage";
 		}
 	};
 	$scope.addcollaborator=function()
@@ -240,13 +240,13 @@ $scope.CreateGame=function(){
 				tId : teacher,
 				gId : game
 			};
-		$http.post('http://localhost:8085/Collaborator', dataObj4);
+		$http.post('https://fun-planet.herokuapp.com/Collaborator', dataObj4);
 		window.location.reload();
 	};
 	$scope.cancelgame=function()
 	{
 		var canceledgame=$scope.availablegameid;
-	    temp = "http://localhost:8085/Game/Cancel/"+canceledgame;
+	    temp = "https://fun-planet.herokuapp.com/Game/Cancel/"+canceledgame;
 		$http.get(temp).
 			then(function(response2) {
 			alert("Game Successfully Canceled");
@@ -257,7 +257,7 @@ $scope.CreateGame=function(){
 	$scope.uncancelgame=function()
 	{
 		var uncanceledgame=$scope.canceledgameid;
-	    temp = "http://localhost:8085/Game/UnCancel/"+uncanceledgame;
+	    temp = "https://fun-planet.herokuapp.com/Game/UnCancel/"+uncanceledgame;
 		$http.get(temp).
 			then(function(response2) {
 			alert("Game Successfully UnCanceled");
@@ -271,7 +271,7 @@ $scope.CreateGame=function(){
 	};
 	$scope.logout=function()
 	{
-		window.location.href="http://localhost:8080/FunPlanetGui";
+		window.location.href="https://fun-planet.herokuapp.com/HomePage";
 	};
 	
 });

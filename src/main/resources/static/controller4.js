@@ -16,7 +16,7 @@ app.controller('AllPage', function($scope,$http) {
 	var newgamename=localStorage.getItem("NewGameName");
 	var newgamedes=localStorage.getItem("NewGameDes");
 	var GameID;
-    $http.get("http://localhost:8085/Game").
+    $http.get("https://fun-planet.herokuapp.com/Game").
     then(function(response3) {
         $scope.newgames = response3.data;
         for(x=0 ; x < $scope.newgames.length ;x++ )
@@ -41,7 +41,7 @@ app.controller('AllPage', function($scope,$http) {
     			question : $scope.tfquestion,
     			answer : ans
 			};
-		$http.post('http://localhost:8085/QuestionTF', dataObj);
+		$http.post('https://fun-planet.herokuapp.com/QuestionTF', dataObj);
 		alert("Question Added");
     	$scope.tfquestion="";
         var ele = document.getElementsByName("anwser");
@@ -61,7 +61,7 @@ app.controller('AllPage', function($scope,$http) {
     			correct : $scope.correctanswer
 			};
     	
-		$http.post('http://localhost:8085/QuestionMSQ', dataObj);
+		$http.post('https://fun-planet.herokuapp.com/QuestionMSQ', dataObj);
 		alert("Question Added");
     	$scope.msqquestion="";
     	$scope.answera="";
@@ -72,7 +72,7 @@ app.controller('AllPage', function($scope,$http) {
     
 $scope.Finish=function(){
 	alert("All Questions Added Successfully");
-	window.location.href="http://localhost:8080/FunPlanetGui/Teacher.html";
+	window.location.href="https://fun-planet.herokuapp.com/TeacherPage";
     };
     
 });

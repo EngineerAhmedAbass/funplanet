@@ -10,7 +10,7 @@ app.controller('home', function($scope, $http){
 	$scope.GetUser=function(){
 	var val2 = document.getElementById("testpass").value;
 	var val = document.getElementById("testid").value;
-	var temp = "http://localhost:8085/Teacher/"+val;
+	var temp = "https://fun-planet.herokuapp.com/Teacher/"+val;
     $http.get(temp).
         then(function(response2) {
             $scope.greeting = response2.data;
@@ -20,10 +20,10 @@ app.controller('home', function($scope, $http){
             	localStorage.setItem("UserMail", $scope.greeting.email);
             	localStorage.setItem("UserName", $scope.greeting.name);
             	localStorage.setItem("UserType","Teacher");
-            	window.location.href="http://localhost:8080/FunPlanetGui/Teacher.html";
+            	window.location.href="https://fun-planet.herokuapp.com/TeacherPage";
             }
             else{
-            	temp = "http://localhost:8085/Student/"+val;
+            	temp = "https://fun-planet.herokuapp.com/Student/"+val;
             	$http.get(temp).
                 then(function(response3) {
                 	$scope.greeting2 = response3.data;
@@ -33,7 +33,7 @@ app.controller('home', function($scope, $http){
                     	localStorage.setItem("UserMail", $scope.greeting2.email);
                     	localStorage.setItem("UserName", $scope.greeting2.name);
                     	localStorage.setItem("UserType","Student");
-                    	window.location.href="http://localhost:8080/FunPlanetGui/Student.html";
+                    	window.location.href="https://fun-planet.herokuapp.com/StudentPage";
                     }
                     else{
                     	window.alert("The Email or Password Is Incorrect");
@@ -47,7 +47,7 @@ app.controller('home', function($scope, $http){
     };
 	$scope.sendcode=function(){
 		var mail =document.getElementById("usermail").value;	
-		var tem="http://localhost:8085/Teacher/"+mail;
+		var tem="https://fun-planet.herokuapp.com/Teacher/"+mail;
 		$http.get(tem).
         then(function(response4) {
         	var testuser=response4.data;
@@ -59,7 +59,7 @@ app.controller('home', function($scope, $http){
         	
         })
         
-		tem="http://localhost:8085/Student/"+mail;
+		tem="https://fun-planet.herokuapp.com/Student/"+mail;
 		$http.get(tem).
         then(function(response5) {
         	var testuser=response5.data;
@@ -73,7 +73,7 @@ app.controller('home', function($scope, $http){
        //var Code=123456;
        localStorage.setItem("Code",Code);
   	   var val=document.getElementById("usermail").value ;
-  	   var temp = "http://localhost:8085/Signip/"+Code+"/"+val;
+  	   var temp = "https://fun-planet.herokuapp.com/Signip/"+Code+"/"+val;
        $http.get(temp).
             then(function(response3) {
            	 	//Confirm();
@@ -101,7 +101,7 @@ app.controller('home', function($scope, $http){
 							age : sage,
 							email : semail
 					};
-					var res = $http.post('http://localhost:8085/Student', dataObj);
+					var res = $http.post('https://fun-planet.herokuapp.com/Student', dataObj);
 					alert("Successfully Registerd ");
 					window.location.reload();
 				}
@@ -122,7 +122,7 @@ app.controller('home', function($scope, $http){
 				age : tage,
 				email : temail
 			};
-		$http.post('http://localhost:8085/Teacher', dataObj);
+		$http.post('https://fun-planet.herokuapp.com/Teacher', dataObj);
 		alert("Successfully Registerd ");
 		window.location.reload();
 		
